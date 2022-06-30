@@ -824,7 +824,7 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 
 "use strict";
 
-// Component Definition 
+// Component Definition
 var KTDialog = function(options) {
     // Main object
     var the = this;
@@ -1219,7 +1219,7 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 
 "use strict";
 
-// Component Definition 
+// Component Definition
 var KTImageInput = function(elementId, options) {
     // Main object
     var the = this;
@@ -9409,7 +9409,7 @@ var KTLayoutContent = function() {
 
         if (_element) {
             height = height - parseInt(KTUtil.css(_element, 'paddingTop')) - parseInt(KTUtil.css(_element, 'paddingBottom'));
-        }        
+        }
 
         height = height - KTLayoutHeader.getHeight();
         height = height - KTLayoutSubheader.getHeight();
