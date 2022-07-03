@@ -24,18 +24,14 @@
                             <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8"
                                    type="text" placeholder="username" name="username" autocomplete="off"/>
                             @error('username')
-                            <span class="invalid-feedback" role="alert">
-                                 <strong>{{ $message }}</strong>
-                               </span>
+                            <p class="text-danger mt-1">{{$message}}</p>
                             @enderror
                         </div>
                         <div class="form-group">
                             <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8"
                                    type="password" placeholder="Password" name="password"/>
                             @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                 <strong>{{ $message }}</strong>
-                               </span>
+                            <p class="text-danger mt-1">{{$message}}</p>
                             @enderror
                         </div>
                         <div

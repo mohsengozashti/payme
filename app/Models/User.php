@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Core\Traits\HasData;
+use DateTime;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -10,9 +12,27 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
+/**
+ * @property int id
+ * @property string first_name
+ * @property string last_name
+ * @property string password
+ * @property string username
+ * @property bool status
+ * @property DateTime created_at
+ * @property DateTime updated_at
+ * @property DateTime|null last_login
+ * @property DateTime|null last_login_from
+ * Class User
+ * @package App\Models
+ * @method static User find(int $id)
+ * @method static orderBy(string $key, string $type)
+ * @method static create(array $data)
+ */
+
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable,HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, HasData;
 
     /**
      * The attributes that are mass assignable.

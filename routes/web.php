@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    \Spatie\Permission\Models\Role::create(['name' => 'user']);
+    \Spatie\Permission\Models\Role::create(['name' => 'merchant']);
 });
 
 Auth::routes();
@@ -23,4 +24,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group([],function () {
     Route::resource('users',\App\Http\Controllers\User\UserController::class);
+    Route::resource('merchants',\App\Http\Controllers\Merchant\MerchantController::class);
 });
