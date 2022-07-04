@@ -45,7 +45,7 @@ class UsersDataTable extends DataTable
                 }
             })
             ->editColumn('last_login', function (User $user){
-                return $user->last_login->format('Y-d-m H:i:s');
+                return $user->last_login?->format('Y-d-m H:i:s');
             });
     }
 

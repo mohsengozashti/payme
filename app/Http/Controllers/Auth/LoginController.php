@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -75,6 +76,10 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
+        /** @var User $user */
+        $user->last_login = now();
+        $user->last_login_from = $request->ip();
+        $user->save();
         return redirect(route('users.index'));
     }
 

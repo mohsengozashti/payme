@@ -12,17 +12,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    \Spatie\Permission\Models\Role::create(['name' => 'user']);
-    \Spatie\Permission\Models\Role::create(['name' => 'merchant']);
-});
+;
+Route::redirect('/','users');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['middleware' => ['auth']],function () {
+Route::group([],function () {
     Route::resource('users',\App\Http\Controllers\User\UserController::class);
     Route::resource('merchants',\App\Http\Controllers\Merchant\MerchantController::class);
 });

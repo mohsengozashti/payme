@@ -28,11 +28,26 @@ class MerchantsDataTable extends DataTable
             ->addColumn('company',function (User $user){
                 return $user->getData('company');
             })
+            ->addColumn('merchant_type',function (User $user){
+                return $user->getData('merchant_type');
+            })
+            ->addColumn('balance',function (User $user){
+                return number_format($user->getData('balance'),2).' Rp';
+            })
+            ->addColumn('fund_in_commission_rate',function (User $user){
+                return $user->getData('fund_in_commission').'%';
+            })
+            ->addColumn('fund_out_commission_rate',function (User $user){
+                return $user->getData('fund_out_commission').'%';
+            })
+            ->addColumn('settlement_method',function (User $user){
+                return $user->getData('settlement_method');
+            })
             ->addColumn('action', function (User $user){
                 return view('user.action',compact('user'));
             })
             ->editColumn('last_login', function (User $user){
-                return $user->last_login->format('Y-d-m H:i:s');
+                return $user->last_login?->format('Y-d-m H:i:s');
             });
 //            ->addColumn('action', 'merchant/merchantsdatatable.action');
     }
