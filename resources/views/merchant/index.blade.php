@@ -35,6 +35,10 @@
     </div>
 @endsection
 
+@section('breadcrumb')
+    @include('merchant.breadcrumb')
+@endsection
+
 @push('css')
     <link href="{{asset('assets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
     @endpush

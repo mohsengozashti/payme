@@ -58,6 +58,10 @@
     </div>
 @endsection
 
+@section('breadcrumb')
+    @include('user.breadcrumb')
+@endsection
+
 @push('css')
     <link href="{{asset('assets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
     @endpush
