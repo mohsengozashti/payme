@@ -43,8 +43,11 @@ class MerchantsDataTable extends DataTable
             ->addColumn('settlement_method',function (User $user){
                 return $user->getData('settlement_method');
             })
+            ->addColumn('full_name',function (User $user){
+                return $user->first_name.' '.$user->last_name;
+            })
             ->addColumn('action', function (User $user){
-                return view('user.action',compact('user'));
+                return view('merchant.action',compact('user'));
             })
             ->editColumn('last_login', function (User $user){
                 return $user->last_login?->format('Y-d-m H:i:s');
@@ -94,14 +97,15 @@ class MerchantsDataTable extends DataTable
     {
         return [
             Column::make('id')->title('Id'),
-            Column::make('username')->title('Merchant'),
+            Column::make('username')->title('Merchant Username'),
+            Column::computed('full_name')->title('Merchant Name'),
             Column::make('company')->title('Company'),
             Column::computed('merchant_type')->title('Merchant Type'),
             Column::make('balance')->title('Balance'),
             Column::make('settlement_method')->title('Settlement Method'),
-            Column::make('fund_out_commission_rate')->title('Fund Out Commission Rate'),
-            Column::make('fund_in_commission_rate')->title('Fund In Commission Rate'),
-            Column::make('status')->title('ُStatus'),
+            Column::make('fund_out_commission_rate')->title('Fund Out Commission Rate')->width(5),
+            Column::make('fund_in_commission_rate')->title('Fund In Commission Rate')->width(5),
+            Column::make('status')->title('ُStatus')->width(10),
             Column::make('action')->title('Action')
 
         ];

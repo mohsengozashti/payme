@@ -58,6 +58,10 @@
     </div>
 @endsection
 
+@section('page-title')
+    Users Management
+@endsection
+
 @section('breadcrumb')
     @include('user.breadcrumb')
 @endsection

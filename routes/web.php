@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group([],function () {
+Route::group(['middleware' => ['auth']],function () {
     Route::resource('users',\App\Http\Controllers\User\UserController::class);
     Route::resource('merchants',\App\Http\Controllers\Merchant\MerchantController::class);
 });

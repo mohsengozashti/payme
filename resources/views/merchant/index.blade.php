@@ -35,6 +35,11 @@
     </div>
 @endsection
 
+
+@section('page-title')
+    Merchants Management
+@endsection
+
 @section('breadcrumb')
     @include('merchant.breadcrumb')
 @endsection

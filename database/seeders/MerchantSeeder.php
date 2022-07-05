@@ -17,7 +17,7 @@ class MerchantSeeder extends Seeder
     {
         $faker = Factory::create();
         $settlement_method = ['Seamless', 'No Settlement'];
-        User::factory()->count('75')->make()->each(function (User $user) use ($faker, $settlement_method) {
+        User::factory()->count('75')->create()->each(function (User $user) use ($faker, $settlement_method) {
             $user->assignRole('merchant');
             $user->setData('company', $faker->company());
             $user->setData('balance', random_int(10000, 500000));

@@ -3,7 +3,7 @@
 <!--begin::Head-->
 <head><base href="">
     <meta charset="utf-8" />
-    <title>Metronic Live preview | Keenthemes</title>
+    <title>Payme - @yield('page-title')</title>
     <meta name="description" content="Updates and statistics" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="canonical" href="{{env('APP_URL')}}" />
