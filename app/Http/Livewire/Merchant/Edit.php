@@ -60,8 +60,7 @@ class Edit extends Component
         $this->user->setData('merchant_type',$this->merchant_type);
         $this->user->setData('settlement_method',$this->settlement_method);
         $this->user->setData('fund_out_commission',$this->fund_out_rate);
-        $this->user->setData('fund_in_commission',$this->fund_in_rate);
-        $this->user->assignRole('merchant');
+        $this->user->setData('fund_in_commission',$this->fund_in_rate);;
         $this->redirect(route('merchants.index'));
     }
 
