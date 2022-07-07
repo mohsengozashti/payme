@@ -10,7 +10,7 @@ use Livewire\Component;
 class Create extends Component
 {
     public User $user;
-    public string $merchant_type = 'merchant';
+    public string $merchant_type = 'Merchant';
     public string $password = '';
     public string $company = '';
     public float $fund_out_rate = 0;

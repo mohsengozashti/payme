@@ -22,8 +22,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware' => ['auth']],function () {
     Route::get('users/create',\App\Http\Livewire\User\Create::class)->name('users.create');
     Route::get('users/{user}/edit',\App\Http\Livewire\User\Edit::class)->name('users.edit');
-    Route::resource('users',\App\Http\Controllers\User\UserController::class)->except(['create','edit']);
+    Route::get('users/{user}',\App\Http\Livewire\User\Show::class)->name('users.show');
+    Route::resource('users',\App\Http\Controllers\User\UserController::class)->only('index','destroy');
     Route::get('merchants/create',\App\Http\Livewire\Merchant\Create::class)->name('merchants.create');
     Route::get('merchants/{user}/edit',\App\Http\Livewire\Merchant\Edit::class)->name('merchants.edit');
-    Route::resource('merchants',\App\Http\Controllers\Merchant\MerchantController::class)->except(['create','edit']);
+    Route::get('merchants/{user}',\App\Http\Livewire\Merchant\Show::class)->name('merchants.show');
+    Route::resource('merchants',\App\Http\Controllers\Merchant\MerchantController::class)->only('index','destroy');
 });

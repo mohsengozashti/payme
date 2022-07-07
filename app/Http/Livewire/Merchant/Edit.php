@@ -33,14 +33,14 @@ class Edit extends Component
         return [
             'user.first_name' => ['required','string'],
             'user.last_name' => ['required','string'],
-            'user.username' => ['required','string','unique:users,username'],
+            'user.username' => ['required','string',Rule::unique('users','username')->ignore($this->user->id)],
             'company' => ['required','string'],
             'fund_out_rate' => ['required','numeric','min:0','max:100'],
             'fund_in_rate' => ['required','numeric','min:0','max:100'],
             'merchant_type' => ['required','string',Rule::in(['Merchant'])],
             'settlement_type' => ['required','string',Rule::in(['Seamless','No Settlement'])],
             'balance' => ['required','numeric'],
-            'password' => ['required','string','min:6'],
+            'password' => ['nullable','string','min:6'],
             'user.status' => ['required',Rule::in([0,1])],
         ];
     }

@@ -76,7 +76,7 @@
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                        <a type="button" href="{{\Illuminate\Support\Facades\URL::previous()}}" class="btn btn-secondary">Cancel</a>
+                        <a href="{{route('users.index')}}" class="btn btn-secondary">Cancel</a>
                     </div>
                 </form>
                 <!--end::Form-->

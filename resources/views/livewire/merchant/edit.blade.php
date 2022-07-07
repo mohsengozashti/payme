@@ -142,7 +142,7 @@
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                        <button type="button" class="btn btn-secondary">Cancel</button>
+                        <a href="{{route('merchants.index')}}" class="btn btn-secondary">Cancel</a>
                     </div>
                 </form>
                 <!--end::Form-->

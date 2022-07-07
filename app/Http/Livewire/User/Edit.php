@@ -24,8 +24,8 @@ class Edit extends Component
         return [
             'user.first_name' => ['required','string'],
             'user.last_name' => ['required','string'],
-            'user.username' => ['required','string','unique:users,username'],
-            'password' => ['required','string','min:6'],
+            'user.username' => ['required','string',Rule::unique('users','username')->ignore($this->user->id)],
+            'password' => ['nullable','string','min:6'],
             'user.status' => ['required',Rule::in([0,1])],
             'roles' => ['required','array',Rule::in('manager','user','merchant','payout','finance')]
         ];
