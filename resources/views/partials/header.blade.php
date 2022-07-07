@@ -15,7 +15,7 @@
                     </li>
                     <!--begin::Merchant Menu-->
                     <li class="menu-item menu-item-submenu menu-item-rel" data-menu-toggle="click" aria-haspopup="true">
-                        <a href="javascript:;" class="menu-link menu-toggle">
+                        <a href="{{route('merchants.index')}}" class="menu-link menu-toggle">
                             <span class="menu-text">Merchant</span>
                             <span class="menu-desc"></span>
                             <i class="menu-arrow"></i>
@@ -23,7 +23,7 @@
                         <div class="menu-submenu menu-submenu-classic menu-submenu-left">
                             <ul class="menu-subnav">
                                 <li class="menu-item" aria-haspopup="true">
-                                    <a target="_blank" href="https://preview.keenthemes.com/metronic/demo12/builder.html" class="menu-link">
+                                    <a href="{{route('merchants.index')}}" class="menu-link">
 																<span class="svg-icon menu-icon">
 																	<!--begin::Svg Icon | path:assets/media/svg/icons/Home/Library.svg-->
 																	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -35,7 +35,7 @@
 																	</svg>
                                                                     <!--end::Svg Icon-->
 																</span>
-                                        <span class="menu-text">Item</span>
+                                        <span class="menu-text">Merchant Management</span>
                                     </a>
                                 </li>
                             </ul>

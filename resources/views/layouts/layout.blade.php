@@ -20,6 +20,7 @@
     <!--end::Layout Themes-->
     <link rel="shortcut icon" href="{{asset('assets/media/logos/favicon.ico')}}" />
     @stack('css')
+    @livewireStyles
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -557,6 +558,7 @@
 <script src="{{asset('assets/js/scripts.bundle.js')}}"></script>
 <!--end::Global Theme Bundle-->
 @stack('js')
+@livewireScripts
 </body>
 <!--end::Body-->
 </html>

@@ -74,7 +74,8 @@ class UsersDataTable extends DataTable
             ->orderBy(0,'desc')
             ->responsive(true)
             ->autoWidth(true)
-            ->parameters(['scrollX' => true])
+            ->autoFillHorizontal(true)
+            ->parameters(['scrollX' => 'auto'])
             ->addTableClass('align-middle table-row-dashed fs-6 gy-5')
             ->initComplete(" function () {
             this.api().column(1).every(function (col) {
