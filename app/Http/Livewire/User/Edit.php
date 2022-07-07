@@ -35,7 +35,7 @@ class Edit extends Component
         $this->validateOnly($field,$this->rules());
     }
 
-    public function create(){
+    public function edit(){
         $this->validate($this->rules());
         if ($this->password != ''){
             $this->user->password = bcrypt($this->password);

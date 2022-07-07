@@ -7,7 +7,7 @@
                     <h3 class="card-title">Edit User {{$user->first_name. ' '.$user->last_name}}</h3>
                 </div>
                 <!--begin::Form-->
-                <form class="form" wire:submit.prevent="create">
+                <form class="form" wire:submit.prevent="edit">
                     <div class="card-body">
                         <div class="form-group">
                             <label>First Name:</label>
