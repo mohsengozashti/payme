@@ -69,10 +69,10 @@
                                     @endforeach
                                 </select>
                             </div>
+                            @error('roles')
+                            <span class="form-text text-danger">{{$message}}</span>
+                            @enderror
                         </div>
-
-
-
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary mr-2">Submit</button>

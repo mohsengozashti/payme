@@ -36,7 +36,6 @@ class Create extends Component
 
     public function create(){
         $this->validate($this->rules());
-        dd($this->user,$this->roles,$this->password);
         $this->user->password = bcrypt($this->password);
         $this->user->save();
         $this->user->assignRole($this->roles);
