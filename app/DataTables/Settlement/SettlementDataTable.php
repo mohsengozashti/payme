@@ -48,7 +48,7 @@ class SettlementDataTable extends DataTable
                 return $settlement->merchant->full_name;
             })
             ->addColumn('action', function (Settlement $settlement){
-                return view('fundin.action',compact('settlement'));
+                return view('settlement.action',compact('settlement'));
             })
             ->editColumn('completed_at', function (Settlement $settlement){
                 return $settlement->completed_at?->format('Y-d-m H:i:s');

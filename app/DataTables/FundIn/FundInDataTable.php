@@ -104,9 +104,9 @@ class FundInDataTable extends DataTable
             Column::make('customer_bank_code')->title('Bank Code'),
             Column::make('requested_amount')->title('RequestedAmount'),
             Column::make('customer_bank_name')->title('Bank'),
-            Column::make('fund_in_commission')->title('Fund In Commission')->width(5),
-            Column::make('status')->title('Transaction Status')->width(10),
-            Column::make('update_by')->title('Updated By')->width(10),
+            Column::make('fund_in_commission')->title('Fund In Commission'),
+            Column::make('status')->title('Transaction Status'),
+            Column::make('update_by')->title('Updated By'),
             Column::make('completed_at')->title('Completed At'),
             Column::make('action')->title('Action')
 

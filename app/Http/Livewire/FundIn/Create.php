@@ -12,6 +12,8 @@ class Create extends Component
     public FundIn $fundin;
     public function mount(){
         $this->fundin = new FundIn();
+        $this->fundin->status = 2;
+        $this->fundin->update_by = 'manual';
     }
 
     public function rules(){

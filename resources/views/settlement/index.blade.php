@@ -42,7 +42,7 @@
 @endsection
 
 @section('breadcrumb')
-    @include('fundin.breadcrumb')
+    @include('settlement.breadcrumb')
 @endsection
 
 @push('css')
