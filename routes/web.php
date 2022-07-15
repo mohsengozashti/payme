@@ -28,4 +28,9 @@ Route::group(['middleware' => ['auth']],function () {
     Route::get('merchants/{user}/edit',\App\Http\Livewire\Merchant\Edit::class)->name('merchants.edit');
     Route::get('merchants/{user}',\App\Http\Livewire\Merchant\Show::class)->name('merchants.show');
     Route::resource('merchants',\App\Http\Controllers\Merchant\MerchantController::class)->only('index','destroy');
+    Route::get('fund-ins/{fundIn}/edit',\App\Http\Livewire\FundIn\Edit::class)->name('fund-ins.edit');
+    Route::resource('fund-ins',\App\Http\Controllers\FundInController::class)->only('index','destroy');
+    Route::resource('fund-outs',\App\Http\Controllers\FundOutController::class)->only('index','destroy');
+    Route::get('settlements/{settlement}/edit',\App\Http\Livewire\Settlement\Edit::class)->name('settlements.edit');
+    Route::resource('settlements',\App\Http\Controllers\SettlementController::class)->only('index','destroy');
 });
