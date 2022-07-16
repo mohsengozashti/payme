@@ -31,7 +31,7 @@ class FundOutDataTable extends DataTable
             ->addColumn('amount', function (FundOut $fundOut) {
                 return number_format($fundOut->amount, 2) . ' Rp';
             })
-            ->editColumn('merchant', function (FundOut $fundOut) {
+            ->editColumn('merchant_id', function (FundOut $fundOut) {
                 return $fundOut->merchant->full_name;
             })
             ->addColumn('action', function (FundOut $fundIn) {
@@ -86,7 +86,7 @@ class FundOutDataTable extends DataTable
             Column::make('id')->title('No'),
             Column::make('transaction_id')->title('Id'),
             Column::make('order_number')->title('Order No'),
-            Column::make('merchant')->title('Merchant'),
+            Column::make('merchant_id')->title('Merchant'),
             Column::make('account_name')->title('Account Name'),
             Column::make('account_number')->title('Account Number'),
             Column::make('customer_bank_code')->title('Bank Code'),

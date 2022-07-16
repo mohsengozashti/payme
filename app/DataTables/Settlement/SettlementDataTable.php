@@ -44,7 +44,7 @@ class SettlementDataTable extends DataTable
             ->addColumn('amount',function (Settlement $settlement){
                 return number_format($settlement->amount,2);
             })
-            ->editColumn('merchant',function (Settlement $settlement){
+            ->editColumn('merchant_id',function (Settlement $settlement){
                 return $settlement->merchant->full_name;
             })
             ->addColumn('action', function (Settlement $settlement){
@@ -96,7 +96,7 @@ class SettlementDataTable extends DataTable
             Column::make('transaction_id')->title('Transaction Id'),
             Column::make('settlement_id')->title('Settlement Id'),
             Column::make('order_number')->title('Order No'),
-            Column::make('merchant')->title('Merchant'),
+            Column::make('merchant_id')->title('Merchant'),
             Column::make('customer_bank_code')->title('Bank Code'),
             Column::make('customer_bank_name')->title('Bank'),
             Column::make('account_name')->title('Account Name'),

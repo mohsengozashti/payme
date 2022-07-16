@@ -49,7 +49,7 @@ class FundInDataTable extends DataTable
             ->addColumn('fund_in_commission',function (FundIn $fundIn){
                 return $fundIn->fund_in_commission;
             })
-            ->editColumn('merchant',function (FundIn $fundIn){
+            ->editColumn('merchant_id',function (FundIn $fundIn){
                 return $fundIn->merchant->full_name;
             })
             ->addColumn('action', function (FundIn $fundIn){
@@ -100,7 +100,7 @@ class FundInDataTable extends DataTable
             Column::make('id')->title('No'),
             Column::make('transaction_id')->title('Id'),
             Column::make('order_number')->title('Order No'),
-            Column::make('merchant')->title('Merchant'),
+            Column::make('merchant_id')->title('Merchant'),
             Column::make('customer_bank_code')->title('Bank Code'),
             Column::make('requested_amount')->title('RequestedAmount'),
             Column::make('customer_bank_name')->title('Bank'),
