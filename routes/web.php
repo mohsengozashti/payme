@@ -33,4 +33,7 @@ Route::group(['middleware' => ['auth']],function () {
     Route::resource('fund-outs',\App\Http\Controllers\FundOutController::class)->only('index','destroy');
     Route::get('settlements/{settlement}/edit',\App\Http\Livewire\Settlement\Edit::class)->name('settlements.edit');
     Route::resource('settlements',\App\Http\Controllers\SettlementController::class)->only('index','destroy');
+    Route::get('roles/create',\App\Http\Livewire\Role\Create::class)->name('roles.create');
+    Route::get('roles/{role}/edit',\App\Http\Livewire\Role\Edit::class)->name('roles.edit');
+    Route::get('roles',[\App\Http\Controllers\RoleController::class,'index'])->name('roles.index');
 });
