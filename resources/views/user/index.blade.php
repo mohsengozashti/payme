@@ -9,6 +9,7 @@
                     <h3 class="card-label">Users
 {{--                        <span class="d-block text-muted pt-2 font-size-sm">Column output customization</span></h3>--}}
                 </div>
+                @can('create-user')
                 <div class="card-toolbar">
                     <!--begin::Button-->
                     <a href="{{route('users.create')}}" class="btn btn-primary font-weight-bolder">
@@ -25,6 +26,7 @@
 											</span>Create User</a>
                     <!--end::Button-->
                 </div>
+                @endcan
             </div>
             <div class="card-body">
                 <!--begin: Search Form-->

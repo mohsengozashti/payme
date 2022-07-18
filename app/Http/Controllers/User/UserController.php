@@ -14,6 +14,11 @@ use Illuminate\Http\Response;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:view-user')->only('index');
+        $this->middleware('permission:delete-user')->only('destroy');
+    }
     /**
      * Display a listing of the resource.
      *

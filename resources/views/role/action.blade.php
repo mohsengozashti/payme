@@ -8,9 +8,11 @@
 {{--        </button>--}}
 {{--    </form>--}}
 {{--</td>--}}
+@can('update-role')
 <td class="text-end">
     <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-sm btn-info btn-active-light-info mt-1">
         Edit
     </a>
 </td>
+@endcan
 <!--end::Action--->

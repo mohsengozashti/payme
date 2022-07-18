@@ -10,6 +10,7 @@
 {{--                        <span class="d-block text-muted pt-2 font-size-sm">Column output customization</span></h3>--}}
                 </div>
                 <div class="card-toolbar">
+                    @can('create-role')
                     <!--begin::Button-->
                     <a href="{{route('roles.create')}}" class="btn btn-primary font-weight-bolder">
 											<span class="svg-icon svg-icon-md">
@@ -23,6 +24,7 @@
 												</svg>
                                                 <!--end::Svg Icon-->
 											</span>Create Role</a>
+                    @endcan
                     <!--end::Button-->
                 </div>
             </div>

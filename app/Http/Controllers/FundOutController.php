@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class FundOutController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:view-fund-out')->only('index');
+        $this->middleware('permission:delete-fund-out')->only('destroy');
+    }
     /**
      * Display a listing of the resource.
      *

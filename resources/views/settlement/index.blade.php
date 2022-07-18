@@ -11,6 +11,7 @@
                 </div>
                 <div class="card-toolbar">
                     <!--begin::Button-->
+                    @can('create-settlement')
                     <button data-toggle="modal" data-target="#create" class="btn btn-primary font-weight-bolder">
 											<span class="svg-icon svg-icon-md">
 												<!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
@@ -23,6 +24,7 @@
 												</svg>
                                                 <!--end::Svg Icon-->
 											</span>Create Settlement</button>
+                @endcan
                     <!--end::Button-->
                 </div>
             </div>
@@ -33,7 +35,9 @@
         </div>
         <!--end::Card-->
     </div>
+    @can('create-settlement')
     <livewire:settlement.create/>
+    @endcan
 @endsection
 
 
@@ -52,6 +56,7 @@
 @push('js')
     <script src="{{asset('assets/plugins/custom/datatables/datatables.bundle.js')}}"></script>
     {{ $dataTable->scripts() }}
+    @can('delete-settlement')
     <script>
         function deleteItem(id) {
             console.log(id);
@@ -66,4 +71,5 @@
             })
         }
     </script>
+    @endcan
 @endpush

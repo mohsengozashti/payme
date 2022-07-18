@@ -12,6 +12,11 @@ use Illuminate\Routing\Redirector;
 
 class FundInController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:view-fund-in')->only('index');
+        $this->middleware('permission:delete-fund-in')->only('destroy');
+    }
     /**
      * Display a listing of the resource.
      *

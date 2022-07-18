@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class SettlementController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:view-settlement')->only('index');
+        $this->middleware('permission:delete-settlement')->only('destroy');
+    }
+
     /**
      * Display a listing of the resource.
      *

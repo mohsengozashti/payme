@@ -11,6 +11,7 @@
                 </div>
                 <div class="card-toolbar">
                     <!--begin::Button-->
+                    @can('create-fund-in')
                     <button data-toggle="modal" data-target="#create" class="btn btn-primary font-weight-bolder">
 											<span class="svg-icon svg-icon-md">
 												<!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
@@ -23,6 +24,7 @@
 												</svg>
                                                 <!--end::Svg Icon-->
 											</span>Manual Create</button>
+                @endcan
                     <!--end::Button-->
                 </div>
             </div>

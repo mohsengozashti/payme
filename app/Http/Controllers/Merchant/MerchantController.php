@@ -11,6 +11,11 @@ use Illuminate\Http\Response;
 
 class MerchantController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:view-merchant')->only('index');
+        $this->middleware('permission:delete-merchant')->only('destroy');
+    }
     /**
      * Display a listing of the resource.
      *
