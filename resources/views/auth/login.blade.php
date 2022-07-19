@@ -1,5 +1,8 @@
 @extends('layouts.auth')
 
+@section('page-title')
+    Login
+    @endsection
 @section('content')
     <div class="login login-5 login-signin-on d-flex flex-row-fluid" id="kt_login">
         <div class="d-flex flex-center bgi-size-cover bgi-no-repeat flex-row-fluid"

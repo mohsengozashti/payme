@@ -89,6 +89,10 @@ class PermissionSeeder extends Seeder
                 'name' => 'delete-fund-in',
                 'description' => 'Delete FundIn Transaction'
             ],
+            [
+                'name' => 'create-fund-in-link',
+                'description' => 'Generate FundIn Payment Link'
+            ],
             //Settlement Permissions
             [
                 'name' => 'view-settlement',

@@ -45,4 +45,7 @@
         </div>
     </div>
 </div>
+@section('page-title')
+    View Payment Details
+@endsection
 

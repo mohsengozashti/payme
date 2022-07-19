@@ -24,7 +24,9 @@
 												</svg>
                                                 <!--end::Svg Icon-->
 											</span>Manual Create</button>
-                        <button data-toggle="modal" data-target="#createLink" class="btn btn-primary font-weight-bolder">
+                    @endcan
+                    @can('create-fund-in-link')
+                    <button data-toggle="modal" data-target="#createLink" class="btn btn-primary font-weight-bolder">
 											<span class="svg-icon svg-icon-md">
 												<!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
 												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
