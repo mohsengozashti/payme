@@ -35,6 +35,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!--end::Layout Themes-->
     <link rel="shortcut icon" href="{{asset('assets/media/logos/favicon.ico')}}" />
     @stack('css')
+    @livewireStyles
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -56,6 +57,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="{{asset('assets/js/pages/custom/login/login-general.js')}}"></script>
 <!--end::Page Scripts-->
 @stack('js')
+@livewireScripts
 </body>
 <!--end::Body-->
 </html>

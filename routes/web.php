@@ -18,6 +18,9 @@ Route::redirect('/','users');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('test',function (){
+    return uniqid(env('APP_NAME').'_');
+})->name('home');
 
 Route::group(['middleware' => ['auth']],function () {
     Route::get('users/create',\App\Http\Livewire\User\Create::class)->name('users.create')->middleware('permission:create-user');
@@ -37,3 +40,5 @@ Route::group(['middleware' => ['auth']],function () {
     Route::get('roles/{role}/edit',\App\Http\Livewire\Role\Edit::class)->name('roles.edit')->middleware('permission:update-role');
     Route::get('roles',[\App\Http\Controllers\RoleController::class,'index'])->name('roles.index')->middleware('permission:view-role');
 });
+
+Route::get('/{link:unique_id}',\App\Http\Livewire\Link\Show::class)->name('link.show');

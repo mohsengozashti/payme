@@ -15,6 +15,15 @@ class CreateLinksTable extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->id();
+            $table->string('unique_id');
+            $table->string('wallet_address')->nullable();
+            $table->string('bank_name');
+            $table->string('customer_name');
+            $table->unsignedBigInteger('amount');
+            $table->unsignedBigInteger('expiration_duration')->comment('in minutes');
+            $table->boolean('with_qr_code')->default(0);
+            $table->unsignedBigInteger('merchant_id')->nullable();
+            $table->foreign('merchant_id')->on('users')->references('id')->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });
     }
