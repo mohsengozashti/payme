@@ -14,7 +14,7 @@
                 <div class="mb-15">
                     <h3 class="opacity-100 font-weight-normal pb-5">Transaction Details</h3>
                     @if($link->with_qr_code)
-                    <div class="mt-3">{!! QrCode::size(300)->generate(route('link.show',$link)); !!}</div>
+                    <div class="mt-3">{!! \SimpleSoftwareIO\QrCode\Facades\QrCode::size(300)->generate(route('link.show',$link)); !!}</div>
                         @endif
                 </div>
                 <form>

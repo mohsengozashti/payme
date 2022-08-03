@@ -15,15 +15,15 @@ class CreateFundInsTable extends Migration
     {
         Schema::create('fund_ins', function (Blueprint $table) {
             $table->id();
-            $table->string('order_number');
-            $table->string('transaction_id');
-            $table->string('customer_bank_name');
-            $table->string('customer_bank_code');
+            $table->string('order_number')->nullable();
+            $table->string('transaction_id')->nullable();
+            $table->string('customer_bank_name')->nullable();
+            $table->string('customer_bank_code')->nullable();
             $table->string('product')->nullable();
             $table->enum('status',[0,1,2])->comment('0 : reject , 1 : accept , 2 : pending ');
             $table->enum('update_by',['auto','manual']);
             $table->unsignedBigInteger('requested_amount');
-            $table->unsignedBigInteger('fund_in_commission');
+            $table->unsignedBigInteger('fund_in_commission')->nullable();
             $table->unsignedBigInteger('merchant_id')->nullable();
             $table->foreign('merchant_id')->on('users')->references('id')->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamp('completed_at')->nullable();

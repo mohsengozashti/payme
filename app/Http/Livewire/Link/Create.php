@@ -34,6 +34,9 @@ class Create extends Component
     public function create(){
         $this->validate($this->rules());
         $this->link->unique_id = uniqid();
+        do{
+            $this->link->amount = number_format($this->link->amount - number_format((float)rand() / (float)getrandmax(),2) / 100,4);
+        }while( Link::where('merchant_id',$this->link->merchant_id)->where('amount',$this->link->amount)->get()->count() != 0 );
         $this->link->save();
         $this->is_link_created = true;
     }

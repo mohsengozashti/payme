@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Link;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +21,15 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('test',function (){
-    return uniqid(env('APP_NAME').'_');
+        $links = Link::where('created_at','<' , now())->get();
+        /* @var Collection $links  */
+        $links = $links->filter(function (Link $link) {
+            return $link->created_at->addMinutes($link->expiration_duration) > now();
+        })->sortBy(function (Link $link){
+            return $link->created_at;
+        },SORT_REGULAR,false);
+        dd(  $links->where('amount','=','122.997')->first());
+
 })->name('home');
 
 Route::group(['middleware' => ['auth']],function () {
@@ -39,6 +49,7 @@ Route::group(['middleware' => ['auth']],function () {
     Route::get('roles/create',\App\Http\Livewire\Role\Create::class)->name('roles.create')->middleware('permission:create-role');
     Route::get('roles/{role}/edit',\App\Http\Livewire\Role\Edit::class)->name('roles.edit')->middleware('permission:update-role');
     Route::get('roles',[\App\Http\Controllers\RoleController::class,'index'])->name('roles.index')->middleware('permission:view-role');
+    Route::get('bot-reports',[\App\Http\Controllers\BotController::class,'index'])->name('bot.index')->middleware('permission:view-bot-reports');
 });
 
 Route::get('/{link:unique_id}',\App\Http\Livewire\Link\Show::class)->name('link.show');
