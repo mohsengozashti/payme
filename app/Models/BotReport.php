@@ -26,6 +26,10 @@ class BotReport extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'amount','date','bank_name','order_number','transaction_id'
+        'amount','date','bank_name','transaction_id'
+    ];
+
+    protected $casts = [
+        'date' => 'datetime'
     ];
 }

@@ -22,7 +22,7 @@ class CreateFundInsTable extends Migration
             $table->string('product')->nullable();
             $table->enum('status',[0,1,2])->comment('0 : reject , 1 : accept , 2 : pending ');
             $table->enum('update_by',['auto','manual']);
-            $table->unsignedBigInteger('requested_amount');
+            $table->unsignedDouble('requested_amount');
             $table->unsignedBigInteger('fund_in_commission')->nullable();
             $table->unsignedBigInteger('merchant_id')->nullable();
             $table->foreign('merchant_id')->on('users')->references('id')->cascadeOnUpdate()->cascadeOnDelete();

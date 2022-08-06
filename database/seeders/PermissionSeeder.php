@@ -125,6 +125,11 @@ class PermissionSeeder extends Seeder
                 'name' => 'delete-fund-out',
                 'description' => 'Delete FundOut Transaction'
             ],
+            // bot record permissions
+            [
+                'name' => 'view-bot-records',
+                'description' => 'View Bot Records'
+            ],
         ];
 
     }

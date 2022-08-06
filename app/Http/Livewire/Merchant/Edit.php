@@ -21,12 +21,12 @@ class Edit extends Component
     public function mount(User $user){
         $this->user = $user;
         $this->user->status = 1;
-        $this->company = $user->getData('company');
-        $this->fund_in_rate = $user->getData('fund_in_commission');
-        $this->fund_out_rate = $user->getData('fund_out_commission');
-        $this->balance = $user->getData('balance');
-        $this->merchant_type = $user->getData('merchant_type');
-        $this->settlement_method = $user->getData('settlement_method');
+        $this->company = $user->getData('company') ?? '';
+        $this->fund_in_rate = $user->getData('fund_in_commission') ?? 0;
+        $this->fund_out_rate = $user->getData('fund_out_commission') ?? 0;
+        $this->balance = $user->getData('balance') ?? 0;
+        $this->merchant_type = $user->getData('merchant_type') ?? 'merchant';
+        $this->settlement_method = $user->getData('settlement_method') ?? 'No Settlement';
     }
 
     public function rules(){

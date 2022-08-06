@@ -19,7 +19,7 @@ class CreateLinksTable extends Migration
             $table->string('wallet_address')->nullable();
             $table->string('bank_name');
             $table->string('customer_name');
-            $table->unsignedFloat('amount');
+            $table->unsignedDouble('amount');
             $table->unsignedBigInteger('expiration_duration')->comment('in minutes');
             $table->boolean('with_qr_code')->default(0);
             $table->unsignedBigInteger('merchant_id')->nullable();

@@ -3,7 +3,7 @@
 <!--begin::Head-->
 <head><base href="">
     <meta charset="utf-8" />
-    <title>Payme - @yield('page-title')</title>
+    <title>SeaPay - @yield('page-title')</title>
     <meta name="description" content="Updates and statistics" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="canonical" href="{{env('APP_URL')}}" />
@@ -234,7 +234,7 @@
 {{--                                    <!--end::Navigation-->--}}
 {{--                                </div>--}}
 {{--                            </div>--}}
-                            <div class="h1 text-info">Payme</div>
+                            <div class="h1 text-info">SeaPay</div>
                             <!--end::Dropdown-->
                         </div>
                         <!--end::Left-->

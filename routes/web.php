@@ -21,14 +21,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('test',function (){
-        $links = Link::where('created_at','<' , now())->get();
-        /* @var Collection $links  */
-        $links = $links->filter(function (Link $link) {
-            return $link->created_at->addMinutes($link->expiration_duration) > now();
-        })->sortBy(function (Link $link){
-            return $link->created_at;
-        },SORT_REGULAR,false);
-        dd(  $links->where('amount','=','122.997')->first());
+    dd(now());
 
 })->name('home');
 

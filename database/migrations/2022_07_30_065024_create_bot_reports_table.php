@@ -15,6 +15,11 @@ class CreateBotReportsTable extends Migration
     {
         Schema::create('bot_reports', function (Blueprint $table) {
             $table->id();
+            $table->unsignedDouble('amount');
+            $table->timestamp('date');
+            $table->string('bank_name');
+            $table->string('transaction_id')->nullable();
+            $table->string('order_number')->nullable();
             $table->timestamps();
         });
     }

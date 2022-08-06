@@ -22,7 +22,7 @@ Route::post('test', function (Request $request) {
     return $request->all();
 });
 
-Route::get('check-fund-in-link',[\App\Http\Controllers\Api\V1\BotController::class,'checkFundInLink']);
+Route::post('check-fund-in-link',[\App\Http\Controllers\Api\V1\BotController::class,'checkFundInLink']);
 
 
 
